@@ -31,8 +31,9 @@ public class ControllerAboutme {
         aboutmeService.crearAboutme(aboutme);
     }
     
-    @PutMapping ("/aboutme")
-    public void editarAboutme (@RequestBody InfoAboutme aboutme) {
+    @PutMapping ("/aboutme/{id}")
+    public void editarAboutme (@RequestBody InfoAboutme aboutme, @PathVariable ("id") Long id) {
+        aboutme.setId(id);
         aboutmeService.editarAboutme(aboutme);
     }
     
